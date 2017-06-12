@@ -5,6 +5,7 @@ import {FormsModule} from '@angular/forms';
 import {AgGridModule} from 'ag-grid-angular/main';
 // application
 import {AppComponent} from './app.component';
+import {CustomFloatingFilter} from "./custom-floating-filter.component";
 
 
 @NgModule({
@@ -13,11 +14,13 @@ import {AppComponent} from './app.component';
     FormsModule,
     AgGridModule.withComponents(
       [
+        CustomFloatingFilter
       ]
     )
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+    CustomFloatingFilter
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {GridOptions} from 'ag-grid/main';
+import {CustomFloatingFilter} from "./custom-floating-filter.component";
 
 @Component({
   selector: 'my-app',
@@ -15,10 +16,13 @@ export class AppComponent {
     this.gridOptions = <GridOptions>{
       onGridReady: () => {
         this.gridOptions.api.sizeColumnsToFit();
-      }
+      },
+      floatingFilter: true
     };
     this.columnDefs = [
-      {headerName: 'Make', field: 'make'},
+      {headerName: 'Make', field: 'make',
+        floatingFilterComponentFramework: CustomFloatingFilter
+      },
       {headerName: 'Model', field: 'model'},
       {headerName: 'Price', field: 'price'}
     ];
